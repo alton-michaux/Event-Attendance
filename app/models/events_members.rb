@@ -7,8 +7,7 @@ class EventsMembers < ApplicationRecord
   belongs_to :member
 
   reports_kit do
-    aggregation :duration_of_report_data, [:duration, 'EventsMembers.created_at - EventsMembers.updated_at']
-    contextual_filter :for_event, ->(relation, context_params) { relation.where(event_id: context_params[:event_id]) }
-    dimension :member_id, group: 'COUNT(EvntsMembers.member_id)'
+    contextual_filter :for_event, ->(relation, context_params) { relation.where(eventsmembers.event_id: context_params[eventsmembers.event_id]) }
+    dimension :member_id, group: 'COUNT(EventsMembers.member_id)'
   end
 end
