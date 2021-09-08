@@ -1,0 +1,3 @@
+measure: member_ids
+dimensions:
+- event_ids

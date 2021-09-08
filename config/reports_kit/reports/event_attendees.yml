@@ -1,5 +1,3 @@
-measure: member
-contextual_filters:
-- for_event
+measure: number_of_members
 dimensions:
-- member_id
+- event

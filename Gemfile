@@ -24,9 +24,10 @@ gem 'jquery-rails'
 # gem 'devise_invitable'
 gem 'devise-bootstrap-form'
 gem 'recurring_select'
+gem 'reports_kit'
 gem 'simple_calendar', '~> 2.4'
 gem 'simple_form'
-gem 'reports_kit'
+gem 'haml'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

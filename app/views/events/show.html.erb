@@ -17,10 +17,6 @@
 
 <%= render 'form', event: @event %>
 
-<div class='border border-dark'>
-  <%= render_report 'event_attendees' %>
-</div>
-
 <% if @event.members.any? %>
     <% @members.each do |member| %>
         <p> Member: <%= member.full_name %> </p>

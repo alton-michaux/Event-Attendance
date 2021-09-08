@@ -26,4 +26,10 @@ class Event < ApplicationRecord
       Event.new(id: id, description: description, frequency: frequency, start_time: date)
     end
   end
+
+  include ReportsKit::Model
+  reports_kit do
+    aggregation :member_ids, [:count, 'COUNT(event.member_id)']
+    dimension :event_ids, group: Event.all
+  end
 end

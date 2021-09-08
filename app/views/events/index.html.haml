@@ -1,0 +1,16 @@
+%div(class = 'container-fluid mb-4 gy-4 p-5 pt-1')
+
+	%div(class = 'row pt-0') 
+		= link_to 'Members', members_path
+
+	%div(class = 'row') 
+		%h2 Events
+
+	.row 
+		= render partial: 'calendar', locals: { events: @recurring_events }
+
+	%div(class = 'row border border-dark') 
+		= render_report 'event_attendees_per_event'
+
+	%div(class = 'row pb-1') 
+		= link_to 'New Event', new_event_path
