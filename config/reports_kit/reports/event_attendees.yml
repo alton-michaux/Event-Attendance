@@ -1,0 +1,5 @@
+measure: member
+contextual_filters:
+- for_event
+dimensions:
+- member_id

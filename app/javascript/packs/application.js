@@ -6,6 +6,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require reports_kit/application
 
 
 import Rails from "@rails/ujs"

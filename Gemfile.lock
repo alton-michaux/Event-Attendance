@@ -150,6 +150,8 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.7)
+    nokogiri (1.11.7-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.11.7-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -204,6 +206,9 @@ GEM
       rails (>= 5.2)
       sass-rails (>= 4.0)
     regexp_parser (2.1.1)
+    reports_kit (0.7.1)
+      rails (>= 3)
+      spreadsheet (>= 1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -224,6 +229,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
+    ruby-ole (1.2.12.2)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -244,6 +250,8 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    spreadsheet (1.2.9)
+      ruby-ole
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -309,6 +317,7 @@ DEPENDENCIES
   rails (~> 6.1.4)
   rails-controller-testing
   recurring_select
+  reports_kit
   rspec-rails
   selenium-webdriver
   simple_calendar (~> 2.4)

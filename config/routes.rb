@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root to: 'pages#about'
   resources :members
   resources :events
+  
+  mount ReportsKit::Engine, at: 'events#show'
+  # Event reporting view mounted on root page
 
   get 'pages/about', to: 'pages#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
