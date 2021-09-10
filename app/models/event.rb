@@ -3,7 +3,14 @@
 require 'ice_cube'
 require 'active_support/time'
 
-class Event < ApplicationRecord
+class Event < ApplicationRecord 
+  include ReportsKit::Model
+
+  reports_kit do
+    aggregation :members_attending, [:count, 'event.members']
+    # dimension :event, group: :event_id
+  end
+
   has_and_belongs_to_many :members
   validates :description, presence: true
   validates :start_time, presence: true
@@ -12,10 +19,10 @@ class Event < ApplicationRecord
 
   def schedule(start = Time.zone.now.to_date)
     IceCube::Schedule.new(start) do |s|
-      s.add_recurrence_rule IceCube::Rule.daily.until(Date.today + 3650) if frequency === 'Daily'
-      s.add_recurrence_rule IceCube::Rule.weekly.until(Date.today + 3650) if frequency === 'Weekly'
-      s.add_recurrence_rule IceCube::Rule.monthly.until(Date.today + 3650) if frequency === 'Monthly'
-      s.add_recurrence_rule IceCube::Rule.yearly.until(Date.today + 3650) if frequency === 'Annually'
+      s.add_recurrence_rule IceCube::Rule.daily.until(Date.today + 3650) if frequency == 'Daily'
+      s.add_recurrence_rule IceCube::Rule.weekly.until(Date.today + 3650) if frequency == 'Weekly'
+      s.add_recurrence_rule IceCube::Rule.monthly.until(Date.today + 3650) if frequency == 'Monthly'
+      s.add_recurrence_rule IceCube::Rule.yearly.until(Date.today + 3650) if frequency == 'Annually'
     end
   end
 
@@ -25,11 +32,5 @@ class Event < ApplicationRecord
     schedule(start_date).occurrences(end_date).map do |date|
       Event.new(id: id, description: description, frequency: frequency, start_time: date)
     end
-  end
-
-  include ReportsKit::Model
-  reports_kit do
-    aggregation :member_ids, [:count, 'COUNT(event.member_id)']
-    dimension :event_ids, group: Event.all
   end
 end

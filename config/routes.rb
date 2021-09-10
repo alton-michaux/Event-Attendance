@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :members
   resources :events
 
-  mount ReportsKit::Engine, at: 'events#index'
+  mount ReportsKit::Engine, at: '/'
   # Event reporting view mounted on events index page
 
   get 'pages/about', to: 'pages#about'
