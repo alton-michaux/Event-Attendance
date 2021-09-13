@@ -8,10 +8,17 @@
         <%= render partial: 'calendar', locals: { events: @recurring_events } %>
     </div>
 
-    <div class='row'>
-        <% @events.each do |event| %>
-            <%= link_to event.description.to_s, event_path(event.id), method: :get, class: 'link' %>
-        <% end %>
+    <div>
+        <button class='btn btn-primary dropdown-toggle' type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+           All Events
+					<ul class='dropdown-menu'>
+						<% @events.each do |event| %>
+							<li class='dropdown-item'>
+									<%= link_to event.description.to_s, event_path(event.id), method: :get, class: 'link' %>
+							</li>
+						<% end %>
+					</ul>
+        </button>
     </div>
 
     <div class='row pb-1'>
