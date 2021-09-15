@@ -6,7 +6,7 @@
 
   <p>
     <strong>Event Date:</strong>
-    <%= @event.start_time %>
+    <%= @event.start_time.strftime('%m-%d') %>
   </p>
 
   <p>
@@ -15,16 +15,24 @@
   </p>
 </div>
 
-<div class='row'>
-  <% if @event.members.any? %>
+<% if @event.members.any? %>
+  <div class='row'>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Attendees
+    </a>
+  </div>
+
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
       <% @members.each do |member| %>
-          <p> Member: <%= member.full_name %> </p>
+          <p> <%= member.full_name %> </p>
       <% end %>
-  <% end %>
-</div>
+    </div>
+  </div>
+<% end %>
 
 
-<div class='row'>
+<div class='row p-1'>
   <%= link_to 'Back', events_path %>
   <%= link_to 'Edit', edit_event_path(@event) %>
   <%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>

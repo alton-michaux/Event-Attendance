@@ -2,5 +2,7 @@
 
 <%= render 'form', event: @event %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', event_path(@event) %>
+<div class='row'>
+    <%= link_to 'Show', @event %> |
+    <%= link_to 'Back', event_path(@event) %>
+</div>
