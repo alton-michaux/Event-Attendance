@@ -9,4 +9,4 @@ ORDER BY "events"."created_at" ASC
 
 -- querie to render total number of users
 
-SELECT "id", COUNT(*) FROM "members"
+SELECT COUNT(*) AS 'Total' FROM "members"
