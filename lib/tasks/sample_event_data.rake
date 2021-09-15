@@ -1,11 +1,11 @@
+# frozen_string_literal: true
+
 require 'factory_bot'
-require 'spec/factories/events'
 
 module Seeds
-
   class SampleEvents
-
     def self.run
-    u = Factory(:event)
+      FactoryBot.create_list(:event, 10)
+    end
   end
 end

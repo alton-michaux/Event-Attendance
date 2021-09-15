@@ -1,11 +1,11 @@
+# frozen_string_literal: true
+
 require 'factory_bot'
-require 'spec/factories/members'
 
 module Seeds
-
   class SampleMembers
-
     def self.run
-    u = Factory(:member)
+      FactoryBot.create_list(:member, 30)
+    end
   end
 end
