@@ -4,7 +4,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :event do |f|
-    f.description { Faker::Lorem.words }
+    f.description { Faker::Esport.event }
     f.frequency { ['Daily', 'Weekly', 'Monthly', 'Annually'].shuffle.first }
     f.start_time { Faker::Date.forward(days: 24) }
     f.end_time { Faker::Date.forward(days: 48) }
