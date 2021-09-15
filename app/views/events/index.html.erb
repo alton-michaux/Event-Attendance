@@ -9,19 +9,17 @@
     </div>
 
     <div>
-        <button class='btn btn-primary dropdown-toggle' type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-           All Events
-					<ul class='dropdown-menu'>
-						<% @events.each do |event| %>
-							<li class='dropdown-item'>
-									<%= link_to event.description.to_s, event_path(event.id), method: :get, class: 'link' %>
-							</li>
-						<% end %>
-					</ul>
-        </button>
+			<ul class='list-group list-group-flush'>
+				<% @events.each do |event| %>
+					<li class='list-group-item d-flex justify-content-between align-items-center'>
+							<%= link_to event.description.to_s, event_path(event.id), method: :get, class: 'link' %>
+							<span class="badge bg-primary rounded-pill"><%= event.members.count %></span>
+					</li>
+				<% end %>
+			</ul>
     </div>
 
-    <div class='row pb-1'>
+    <div class='row p-1'>
         <%= link_to 'New Event', new_event_path %>
     </div>
 
