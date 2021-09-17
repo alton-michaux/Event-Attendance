@@ -59,6 +59,14 @@ This tells the program to run the code in the file located in lib/tasks/sample_e
 
 Which creates 5 fake events via FactoryBot and Faker (see spec/factories for factory source code), the events are in turn automatically associated to 5 fake members which are all now in the database for use in development.
 
+
+If you want to keep your existing database records for any reason. You can run this command in your terminal:
+
+		bin/rails export:seeds_format > db/$yourfilename.rb
+
+The helper method will create a file named whatever name you pass into the command above. Your existing records will be stored there.
+
+
 Once you’ve created your file at db/seeds.rb, you can now run this command in your terminal:
 
 		bin/rails db:reset
