@@ -7,15 +7,15 @@ Gems used:
 
 - FactoryBot
 
-    gem 'factory_bot_rails'
+        gem 'factory_bot_rails'
 
 - Faker
 
-    gem 'faker'
+        gem 'faker'
 
 - Blazer Reports
 
-    gem 'blazer'
+        gem 'blazer'
 
 Features
 --------
