@@ -5,11 +5,16 @@ ERD will is implemented with the intent of giving developers to this project an 
 
 Gems used:
 
-- FactoryBot 
+- FactoryBot
+
     gem 'factory_bot_rails'
+
 - Faker
+
     gem 'faker'
-- Blazer Reports 
+
+- Blazer Reports
+
     gem 'blazer'
 
 Features
