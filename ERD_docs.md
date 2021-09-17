@@ -39,7 +39,7 @@ Upon cloning the database, checkout a branch called ‘blazer_reports’ by runn
 Setting up the database with fake data
 --------------------------------------
 
-Upon creating your new branch you need to create a db/seeds.rb file, it should have these 2 lines of code:
+Upon creating your new branch you may need to create a db/seeds.rb file, it should have these 2 lines of code:
 
 		require 'factory_bot_rails'
 
