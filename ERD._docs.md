@@ -64,7 +64,7 @@ Once you’ve created your file at db/seeds.rb, you can now run this command in 
 This will wipe out your current database and replace it with 5 fake event and 25 fake member objects
 
 Using the reporting feature
-===========================
+---------------------------
 
 Start your server by running:
 
