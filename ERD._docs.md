@@ -1,5 +1,7 @@
-EventTrackr Reports and Data (hereby referred to as ‘ERD’)
-==========================================================
+EventTrackr Reports and Data
+============================
+(hereby referred to as ‘ERD’)
+-----------------------------
 
 ERD will is implemented with the intent of giving developers to this project an easy way to generate fake data outside of rspec and testing environment as well as a way to present both actual and fake data visually using SQL expressions.
 
