@@ -3,21 +3,21 @@ EventTrackr Reports and Data
 (hereby referred to as ‘ERD’)
 -----------------------------
 
-ERD will is implemented with the intent of giving developers to this project an easy way to generate fake data outside of rspec and testing environment as well as a way to present both actual and fake data visually using SQL expressions.
+ERD is implemented with the intent of giving developers to this project an easy way to generate fake data outside of rspec and testing environment as well as a way to present both actual and fake data visually using SQL expressions.
 
 Gems used:
 
 - FactoryBot
 
-        gem 'factory_bot_rails'
+		gem 'factory_bot_rails'
 
 - Faker
 
-        gem 'faker'
+		gem 'faker'
 
 - Blazer Reports
 
-        gem 'blazer'
+		gem 'blazer'
 
 Features
 --------
@@ -30,38 +30,38 @@ Installation
 
 Clone EventTrackr codebase by running:
 
-    	git clone https://github.com/codeGobbler/Event-Attendance.git
+		git clone https://github.com/codeGobbler/Event-Attendance.git
 
 Upon cloning the database, checkout a branch called ‘blazer_reports’ by running:
 
-    	git checkout -b blazer_reports
+		git checkout -b blazer_reports
 
 Setting up the database with fake data
 --------------------------------------
 
 Upon creating your new branch you need to create a db/seeds.rb file, it should have these 2 lines of code:
 
-	require 'factory_bot_rails'
+		require 'factory_bot_rails'
 
-    Seeds::SampleEvents.run
+		Seeds::SampleEvents.run
 
 This tells the program to run the code in the file located in lib/tasks/sample_event_data.rb:
 
-    require 'factory_bot'
+		require 'factory_bot'
 
-    module Seeds
-    class SampleEvents
-        def self.run
-        FactoryBot.create_list(:event, 5)
-        end
-    end
-    end
+		module Seeds
+			class SampleEvents
+				def self.run
+					FactoryBot.create_list(:event, 5)
+				end
+			end
+		end
 
 Which creates 5 fake events via FactoryBot and Faker (see spec/factories for factory source code), the events are in turn automatically associated to 5 fake members which are all now in the database for use in development.
 
 Once you’ve created your file at db/seeds.rb, you can now run this command in your terminal:
 
-	bin/rails db:reset
+		bin/rails db:reset
 
 This will wipe out your current database and replace it with 5 fake event and 25 fake member objects
 
@@ -70,11 +70,11 @@ Using the reporting feature
 
 Start your server by running:
 
-	bin/rails s
+		bin/rails s
 
 Once the app has loaded, you will need to click ‘sign in’ and then the ‘sign up’ link. Even if you’ve previously created a profile, when you ran:
 
-	bin/rails db:reset
+		bin/rails db:reset
 
 The database wiped all files including user records.
 
