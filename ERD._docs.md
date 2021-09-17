@@ -5,9 +5,12 @@ ERD will is implemented with the intent of giving developers to this project an 
 
 Gems used:
 
-    FactoryBot (add gem 'factory_bot_rails' to your gemfile)
-    Faker (add gem 'faker' to your gemfile)
-    Blazer Reports (add gem 'blazer' to your gemfile)
+- FactoryBot 
+    gem 'factory_bot_rails'
+- Faker
+    gem 'faker'
+- Blazer Reports 
+    gem 'blazer'
 
 Features
 --------
@@ -33,19 +36,19 @@ Upon creating your new branch you need to create a db/seeds.rb file, it should h
 
 	require 'factory_bot_rails'
 
-Seeds::SampleEvents.run
+    Seeds::SampleEvents.run
 
 This tells the program to run the code in the file located in lib/tasks/sample_event_data.rb:
 
-require 'factory_bot'
+    require 'factory_bot'
 
-module Seeds
-  class SampleEvents
-    def self.run
-      FactoryBot.create_list(:event, 5)
+    module Seeds
+    class SampleEvents
+        def self.run
+        FactoryBot.create_list(:event, 5)
+        end
     end
-  end
-end
+    end
 
 Which creates 5 fake events via FactoryBot and Faker (see spec/factories for factory source code), the events are in turn automatically associated to 5 fake members which are all now in the database for use in development.
 
