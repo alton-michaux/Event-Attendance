@@ -41,3 +41,6 @@ yarn-debug.log*
 
 # Ignore rspec-status file
 .rspec_status
+
+# Ignore file with previous records
+db/existing_records.rb
