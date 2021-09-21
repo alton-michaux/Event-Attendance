@@ -11,6 +11,10 @@ RSpec.describe Event, type: :model do
     subject.description = nil
     expect(subject).to_not be_valid
   end
+  it 'is not valid without a frequency' do
+    subject.frequency = nil
+    expect(subject).to_not be_valid
+  end
   it 'is not valid without a start time' do
     subject.start_time = nil
     expect(subject).to_not be_valid
