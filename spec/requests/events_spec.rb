@@ -83,4 +83,18 @@ RSpec.describe 'Events', type: :request do
       expect(response).to render_template(:index)
     end
   end
+  context 'blazer' do
+    it 'should render the index view for blazer engine' do
+      expect do
+        get blazer.root_path
+      end
+      expect(response).to have_http_status(:ok)
+    end
+    it 'should successfully retrieve the organizer dashboard' do
+      expect do
+        get 'http://localhost:3000/blazer/dashboards/1-organizer-dashboard'
+      end
+      expect(response).to have_http_status(:ok)
+    end
+  end
 end

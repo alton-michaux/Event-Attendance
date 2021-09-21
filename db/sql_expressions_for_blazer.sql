@@ -11,14 +11,14 @@ ORDER BY "events"."created_at" ASC
 
 -- inner join with members table
 
-SELECT "description" AS "Activity", "event_location" AS "Location", COUNT('members') AS "Attendees"
+SELECT "description" AS "Event", "event_location" AS "Location", COUNT('member_ids') AS "Attendees"
 FROM "events"
 INNER JOIN "members" 
 ON "event_ids" <> "events"."id"
-WHERE 'id' <> 'member_ids'
+WHERE 'id' <> "member_ids"
 GROUP BY 1
 ORDER BY "events"."created_at" ASC
 
 -- querie to render total number of users
 
-SELECT "id", COUNT(*) FROM "members"
+SELECT COUNT(*) AS 'Total' FROM "members"
