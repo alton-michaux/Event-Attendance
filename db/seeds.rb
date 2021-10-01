@@ -2,4 +2,4 @@
 
 require 'factory_bot_rails'
 
-Seeds::SampleEvents.run
+FactoryBot.create_list(:event, 5)
