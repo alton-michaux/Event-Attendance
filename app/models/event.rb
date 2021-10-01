@@ -5,7 +5,9 @@ require 'active_support/time'
 
 class Event < ApplicationRecord
   has_and_belongs_to_many :members
+
   validates :description, presence: true
+  validates :frequency, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :event_location, presence: true
