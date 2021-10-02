@@ -39,27 +39,6 @@ Upon cloning the database, checkout a branch called ‘blazer_reports’ by runn
 Setting up the database with fake data
 --------------------------------------
 
-Upon creating your new branch you may need to create a db/seeds.rb file, it should have these 2 lines of code:
-
-		require 'factory_bot_rails'
-
-		Seeds::SampleEvents.run
-
-This tells the program to run the code in the file located in lib/tasks/sample_event_data.rb:
-
-		require 'factory_bot'
-
-		module Seeds
-			class SampleEvents
-				def self.run
-					FactoryBot.create_list(:event, 5)
-				end
-			end
-		end
-
-Which creates 5 fake events via FactoryBot and Faker (see spec/factories for factory source code), the events are in turn automatically associated to 5 fake members which are all now in the database for use in development.
-
-
 If you want to keep your existing database records for any reason. You can run this command in your terminal:
 
 		bin/rails export:seeds_format > db/$yourfilename.rb
@@ -67,7 +46,7 @@ If you want to keep your existing database records for any reason. You can run t
 The helper method will create a file named whatever name you pass into the command above. Your existing records will be stored there.
 
 
-Once you’ve created your file at db/seeds.rb, you can now run this command in your terminal:
+Once you’ve backed up your existing records, you can now run this command in your terminal:
 
 		bin/rails db:reset
 
@@ -90,8 +69,6 @@ Once you’ve created a new login, use the navigation bar to checkout the new ev
 
 Once you confirm the new data, navigate to the ‘reports’ tab.
 
-This will throw a ‘recordnotfound’ error (have not yet implemented error handling for this, will be in update). For now, you can truncate the url in the address bar to read: http://localhost:3000/blazer.
-
 This will bring you to the blazer homepage. From here, you will want to input your SQL queries for ‘Total Users’ and ‘Event Attendance by Event’. 
 
 You can find the appropriate queries located in db/sql_expressions_for_blazer.sql. Select ‘New Query’ from the upper right corner of the page. 
@@ -100,7 +77,7 @@ Next, cut and paste the desired queries into the blazer UI, click ‘run’ to v
 
 After you’ve created both queries, you can create your dashboard. Click ‘New Dashboard’ and follow the instructions to get it set up.
 
-Once your dashboard is created, you can navigate back to http://localhost:3000/ and click on the ‘reports’ tab. It should navigate to the dashboard that displays all active members and event attendance by event.
+Once your dashboard is created, you can navigate back to http://localhost:3000/ and click on the ‘reports’ tab. It should navigate directly to the dashboard that displays all active members and event attendance by event.
 
 
 Contribute
